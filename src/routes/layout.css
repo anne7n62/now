@@ -1,1 +1,113 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+/* Design tokens fra Figma */
+/* Utilities kan genereres ud fra @theme */
+
+@theme {
+  --color-ink: #000000;
+  --color-ink-soft: #0c170a;
+  --color-paper: #f8f8f5;
+  --color-sage: #f2f4f0;
+  --color-pink: #fad2f6;
+  --color-butter: #fff3c4;
+  --color-sky: #bfceff;
+
+  --font-sans: "Instrument Sans Variable", system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-grotesk: "Host Grotesk Variable", system-ui, sans-serif;
+}
+
+:root {
+  --gutter: 1rem;
+}
+@media (min-width: 48rem) {
+  :root {
+    --gutter: 3rem;
+  }
+}
+
+@layer base {
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+}
+
+/* Fontstyles fra Figma */
+@utility text-h1 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(2.75rem, 6vw, 87px);
+  line-height: 1.035;
+  letter-spacing: -0.05em;
+}
+
+@utility text-h2 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 60px);
+  line-height: 1.067;
+  letter-spacing: -0.05em;
+}
+
+@utility text-h2-accent {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 4vw, 60px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+@utility text-h3 {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: clamp(1.375rem, 2.5vw, 37px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+@utility text-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+@utility text-button {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 17px;
+}
+
+@utility text-filter {
+  font-family: var(--font-grotesk);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@utility text-details {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+@utility text-meta {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+}
