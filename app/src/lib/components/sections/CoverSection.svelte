@@ -17,24 +17,26 @@
 	];
 </script>
 
-<section>
-	<div>
+<section class="px-(--gutter) py-16 md:py-[100px]">
+	<div class="flex flex-col items-start gap-11">
 		<h1 class="text-h1">
 			Aarhus <span class="font-serif font-normal">event calendar</span>
 			<br />
 			What happening?
 		</h1>
 
-		{#each graphicButtons as button (button.src)}
-			<a href={button.href} class="block transition-transform hover:-rotate-2">
-				<img
-					src={button.src}
-					alt={button.alt}
-					width={button.width}
-					height={button.height}
-					class="h-auto max-w-full"
-				/>
-			</a>
-		{/each}
+		<div class="flex flex-wrap items-end gap-[22px]">
+			{#each graphicButtons as button (button.src)}
+				<a href={button.href} class="block transition-transform hover:-rotate-2">
+					<img
+						src={button.src}
+						alt={button.alt}
+						width={button.width}
+						height={button.height}
+						class="h-auto max-w-full"
+					/>
+				</a>
+			{/each}
+		</div>
 	</div>
 </section>
