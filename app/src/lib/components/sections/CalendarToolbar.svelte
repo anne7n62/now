@@ -1,7 +1,7 @@
 <script lang="ts">
 	import WeekFilter from '#lib/components/ui/WeekFilter.svelte';
-	// import TypeFilter from '#lib/components/ui/TypeFilter.svelte';
-	// import SearchField from '#lib/components/ui/SearchField.svelte';
+	import TypeFilter from '#lib/components/ui/TypeFilter.svelte';
+	import SearchField from '#lib/components/ui/SearchField.svelte';
 </script>
 
 <div
@@ -13,7 +13,7 @@
 	</div>
 
 	<div class="flex flex-wrap items-center gap-2.5">
-		<!-- <TypeFilter />
-		<SearchField /> -->
+		<TypeFilter />
+		<SearchField />
 	</div>
 </div>

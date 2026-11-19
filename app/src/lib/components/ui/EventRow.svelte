@@ -1,8 +1,8 @@
 <script lang="ts">
-	// import { ChevronDown } from '@lucide/svelte';
+	import { ChevronDown } from '@lucide/svelte';
 	import CategoryTag from '#lib/components/ui/CategoryTag.svelte';
-	// import StatusTag from '#lib/components/ui/StatusTag.svelte';
-	// import PillButton from '#lib/components/ui/PillButton.svelte';
+	import StatusTag from '#lib/components/ui/StatusTag.svelte';
+	import PillButton from '#lib/components/ui/PillButton.svelte';
 </script>
 
 <article class="flex border-b border-ink bg-paper">
@@ -18,13 +18,12 @@
 				<div class="flex flex-wrap gap-1.5">
 					<CategoryTag />
 
-					<!-- <StatusTag /> -->
+					<StatusTag />
 				</div>
 			</div>
 
-			<!-- <PillButton>
-				<ChevronDown size={14} aria-hidden="true" />
-			</PillButton> -->
+			<PillButton />
+			<ChevronDown size={14} aria-hidden="true" />
 		</div>
 	</div>
 </article>
