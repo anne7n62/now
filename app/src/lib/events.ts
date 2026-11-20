@@ -1,4 +1,6 @@
-export const events = [
+import type { CalendarEvent } from '#lib/types.js';
+
+export const events: CalendarEvent[] = [
 	{
 		id: 1,
 		title: 'Jakob Dinesen & Albert Sanz',
