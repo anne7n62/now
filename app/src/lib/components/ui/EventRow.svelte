@@ -2,9 +2,10 @@
 	import { ChevronDown } from '@lucide/svelte';
 	import CategoryTag from '#lib/components/ui/CategoryTag.svelte';
 	import PillButton from '#lib/components/ui/PillButton.svelte';
-
 	import { formatDay } from '#lib/utils/dates.js';
 	import type { CalendarEvent } from '#lib/types.js';
+	import { slide } from 'svelte/transition';
+	import { prefersReducedMotion } from 'svelte/motion';
 
 	let { event }: { event: CalendarEvent } = $props();
 
@@ -26,7 +27,11 @@
 					<CategoryTag category={event.category} />
 				</div>
 				{#if isOpen}
-					<div id="event-{event.id}-details" class="mt-4 flex flex-col gap-3 pb-2">
+					<div
+						id="event-{event.id}-details"
+						class="mt-4 flex flex-col gap-3 pb-2"
+						transition:slide={{ duration: prefersReducedMotion.current ? 0 : 250 }}
+					>
 						<p class="text-button">{event.venue}, {event.city}</p>
 						{#if event.description}
 							<p>{event.description}</p>
@@ -44,7 +49,14 @@
 				onclick={() => (isOpen = !isOpen)}
 			>
 				{isOpen ? 'less details' : 'more details'}
-				<ChevronDown size={14} aria-hidden="true" class={[isOpen && 'rotate-180']} />
+				<ChevronDown
+					size={14}
+					aria-hidden="true"
+					class={[
+						'transition-transform duration-250 motion-reduce:transition-none',
+						isOpen && 'rotate-180'
+					]}
+				/>
 			</PillButton>
 		</div>
 	</div>

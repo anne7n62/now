@@ -66,5 +66,38 @@ export const events: CalendarEvent[] = [
 		city: 'Aarhus',
 		description: 'Netværk for iværksættere.',
 		url: 'https://example.com'
+	},
+	{
+		id: 7,
+		title: 'Startup breakfast: Green tech',
+		category: 'meetup',
+		date: '2026-12-02',
+		time: '08:30',
+		venue: 'The Kitchen',
+		city: 'Aarhus',
+		description: 'Netværk for iværksættere.',
+		url: 'https://example.com'
+	},
+	{
+		id: 8,
+		title: 'Startup breakfast: Green tech',
+		category: 'meetup',
+		date: '2026-12-09',
+		time: '08:30',
+		venue: 'The Kitchen',
+		city: 'Aarhus',
+		description: 'Netværk for iværksættere.',
+		url: 'https://example.com'
+	},
+	{
+		id: 9,
+		title: 'Startup breakfast: Green tech',
+		category: 'meetup',
+		date: '2026-12-18',
+		time: '08:30',
+		venue: 'The Kitchen',
+		city: 'Aarhus',
+		description: 'Netværk for iværksættere.',
+		url: 'https://example.com'
 	}
 ];

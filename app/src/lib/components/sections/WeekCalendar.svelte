@@ -8,6 +8,10 @@
 <div class="scroll-mt-28">
 	{#each weeks as week (week.key)}
 		<WeekGroup {week} />
+	{:else}
+		<p class="mx-(--gutter) border-x border-t border-ink bg-white px-4 py-6 text-center">
+			No events match your filters.
+		</p>
 	{/each}
 	<div class="h-[42px] border-y border-ink" aria-hidden="true"></div>
 </div>

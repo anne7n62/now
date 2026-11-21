@@ -38,3 +38,21 @@ export function groupByWeek(events: CalendarEvent[]): WeekGroup[] {
 	}
 	return [...groups.values()];
 }
+
+export function getUpcomingWeeks(
+	events: CalendarEvent[],
+	count = 4,
+	today = new Date()
+): WeekGroup[] {
+	const groups = groupByWeek(events);
+	const weeks: WeekGroup[] = [];
+
+	for (let i = 0; i < count; i++) {
+		const day = new Date(today);
+		day.setDate(today.getDate() + i * 7); // the same weekday, i weeks later
+		const { week, year } = getIsoWeek(day);
+		const key = `${year}-${week}`;
+		weeks.push(groups.find((group) => group.key === key) ?? { key, week, year, events: [] });
+	}
+	return weeks;
+}
