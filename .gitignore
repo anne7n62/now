@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+!.env.example
+cms/data/
+cms/uploads/
+.DS_Store
+build/
+.svelte-kit/

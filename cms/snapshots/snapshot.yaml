@@ -12,7 +12,7 @@ collections:
       collapse: open
       collection: categories
       color: null
-      display_template: '{{name}}'
+      display_template: "{{name}}"
       group: null
       hidden: false
       icon: label
@@ -36,7 +36,7 @@ collections:
       collapse: open
       collection: submissions
       color: null
-      display_template: '{{event_name}}'
+      display_template: "{{event_name}}"
       group: null
       hidden: false
       icon: inbox
@@ -60,7 +60,7 @@ collections:
       collapse: open
       collection: venues
       color: null
-      display_template: '{{name}}'
+      display_template: "{{name}}"
       group: null
       hidden: false
       icon: location_on
@@ -84,7 +84,7 @@ collections:
       collapse: open
       collection: weekly_events
       color: null
-      display_template: '{{title}}'
+      display_template: "{{title}}"
       group: null
       hidden: false
       icon: calendar_view_week
@@ -789,7 +789,7 @@ fields:
       conditions: null
       display: related-values
       display_options:
-        template: '{{categories_id.name}}'
+        template: "{{categories_id.name}}"
       field: categories
       group: null
       hidden: false
@@ -797,7 +797,7 @@ fields:
       note: null
       options:
         enableCreate: false
-        template: '{{categories_id.name}}'
+        template: "{{categories_id.name}}"
       readonly: false
       required: true
       sort: null
@@ -1053,14 +1053,14 @@ fields:
       conditions: null
       display: related-values
       display_options:
-        template: '{{name}}'
+        template: "{{name}}"
       field: venue
       group: null
       hidden: false
       interface: select-dropdown-m2o
       note: null
       options:
-        template: '{{name}}'
+        template: "{{name}}"
       readonly: false
       required: true
       sort: null

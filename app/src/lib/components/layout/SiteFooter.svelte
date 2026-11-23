@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import LiveClock from '#lib/components/ui/LiveClock.svelte';
 
 	const links = [
 		{ href: resolve('/editorial'), label: 'Editorial' },
@@ -13,8 +14,7 @@
 		class="flex flex-wrap items-baseline justify-center gap-x-[13px] bg-white px-(--gutter) py-3 text-center"
 	>
 		<span class="text-h2-accent">We are here now</span>
-		<span class="text-h2">LIVE CLOCK</span>
-		<!-- TO DO: add live clock -->
+		<LiveClock city="Aarhus" />
 	</p>
 
 	<div
