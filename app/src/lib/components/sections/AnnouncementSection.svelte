@@ -1,4 +1,12 @@
+<script lang="ts">
+	import DraggableTags from './DraggableTags.svelte';
+
+	let section = $state<HTMLElement>();
+</script>
+
 <section
+	bind:this={section}
+	aria-labelledby="announcement-title"
 	class="relative flex flex-col items-center gap-12 overflow-hidden border-y border-ink bg-sky px-(--gutter) py-24 md:py-[150px]"
 >
 	<h2 id="announcement-title" class="text-eyebrow text-ink-soft">What we are working on</h2>
@@ -9,11 +17,5 @@
 		choose, Friday or Saturday at Northside!!
 	</p>
 
-	<!-- TO DO: Add draggable  -->
-	<div
-		class="flex w-40 cursor-grab touch-none items-center justify-center rounded-[50px] border-2 border-ink bg-white px-2.5 py-3 text-center text-sm font-bold text-ink-soft uppercase select-none active:cursor-grabbing md:w-[324px] md:py-[26px] md:text-eyebrow"
-		style:rotate="5deg"
-	>
-		label
-	</div>
+	<DraggableTags bounds={section} />
 </section>
