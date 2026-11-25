@@ -11,7 +11,7 @@
 
 	<ul class="mx-(--gutter) border-x border-ink bg-white">
 		{#each week.events as event (event.id)}
-			<li class="scroll-mt-28 *:transition-colors *:duration-700 target:*:bg-butter">
+			<li class="scroll-mt-[calc(var(--header-h)+var(--toolbar-h))] *:transition-colors *:duration-700 target:*:bg-butter">
 				<EventRow {event} />
 			</li>
 		{/each}

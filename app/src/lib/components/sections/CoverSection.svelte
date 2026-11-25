@@ -1,7 +1,7 @@
 <script>
 	const graphicButtons = [
 		{
-			//TO DO: Scroll til dagens event
+			href: '#calendar',
 			src: '/images/on-this-day.svg',
 			alt: 'On this day',
 			width: 216,

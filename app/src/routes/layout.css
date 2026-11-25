@@ -15,6 +15,7 @@
 }
 :root {
 	--gutter: 1rem;
+	--header-h: 4.5rem; //TO DO: find den rigtige højde på headeren --- IGNORE ---
 }
 @media (min-width: 48rem) {
 	:root {

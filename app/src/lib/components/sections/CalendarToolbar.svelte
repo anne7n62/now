@@ -8,18 +8,20 @@
 		allWeeks,
 		selectedWeek = $bindable(),
 		selectedCategory = $bindable(),
-		search = $bindable()
+		search = $bindable(),
+		height = $bindable(0)
 	}: {
 		allWeeks: WeekGroup[];
 		selectedWeek: number | null;
 		selectedCategory: Category | 'all';
 		search: string;
+		height?: number;
 	} = $props();
 </script>
 
 <!-- /***/ WEEK FILTERS **/ -->
 <div
-	class="flex flex-col gap-3 border-t border-ink bg-sage px-(--gutter) py-3 lg:flex-row lg:items-center lg:justify-between"
+	bind:clientHeight={height} class="sticky top-(--header-h) z-20 flex flex-col gap-3 border-t border-ink bg-sage px-(--gutter) py-3 lg:flex-row lg:items-center lg:justify-between"
 >
 	<div role="group" aria-labelledby="week-filter-label" class="flex flex-wrap items-center gap-2.5">
 		<span id="week-filter-label" class="text-filter">Weekly filters:</span>

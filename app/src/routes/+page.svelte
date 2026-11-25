@@ -16,6 +16,9 @@
 	let selectedCategory = $state<Category | 'all'>('all');
 	let search = $state('');
 
+	//find højde på toolbar
+	  let toolbarH = $state(0);
+
 	//
 	function matches(event: CalendarEvent) {
 		if (selectedCategory !== 'all' && event.category !== selectedCategory) return false;
@@ -38,8 +41,8 @@
 
 <CoverSection />
 
-<section aria-label="Event calendar">
-	<CalendarToolbar {allWeeks} bind:selectedWeek bind:selectedCategory bind:search />
+<section id="calendar" aria-label="Event calendar" class="scroll-mt-(--header-h)" style="--toolbar-h: {toolbarH}px">
+	<CalendarToolbar {allWeeks} bind:selectedWeek bind:selectedCategory bind:search bind:height={toolbarH} />
 	<WeekCalendar {weeks} />
 </section>
 

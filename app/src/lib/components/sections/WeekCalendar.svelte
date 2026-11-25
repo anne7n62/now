@@ -5,7 +5,7 @@
 	let { weeks }: { weeks: WeekGroupData[] } = $props();
 </script>
 
-<div class="scroll-mt-28">
+<div class="scroll-mt-[calc(var(--header-h)+var(--toolbar-h))]">
 	{#each weeks as week (week.key)}
 		<WeekGroup {week} />
 	{:else}
