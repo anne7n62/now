@@ -2,7 +2,7 @@
 	import { ChevronDown } from '@lucide/svelte';
 	import CategoryTag from '#lib/components/ui/CategoryTag.svelte';
 	import PillButton from '#lib/components/ui/PillButton.svelte';
-	import { formatDay } from '#lib/utils/dates.js';
+	import { formatDay, isToday } from '#lib/utils/dates.js';
 	import type { CalendarEvent } from '#lib/types.js';
 	import { slide } from 'svelte/transition';
 	import { prefersReducedMotion } from 'svelte/motion';
@@ -15,7 +15,7 @@
 
 <article class="flex border-b border-ink bg-paper">
 	<div class="w-[72px] shrink-0 border-r border-ink p-3 text-ink-soft md:w-[89px]">
-		<p class="text-details">{formatDay(event.date)}</p>
+		<p class="text-details">{isToday(event.date) ? 'Today' : formatDay(event.date)}</p>
 		<p class="text-meta">{event.time}</p>
 	</div>
 

@@ -56,3 +56,11 @@ export function getUpcomingWeeks(
 	}
 	return weeks;
 }
+
+/** true hvis '2026-11-24' er i dag (lokal tid) */
+export function isToday(date: string, today = new Date()): boolean {
+	const y = today.getFullYear();
+	const m = String(today.getMonth() + 1).padStart(2, '0');
+	const d = String(today.getDate()).padStart(2, '0');
+	return date === `${y}-${m}-${d}`;
+}

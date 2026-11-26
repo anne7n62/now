@@ -49,7 +49,7 @@ export const events: CalendarEvent[] = [
 		id: 5,
 		title: 'Byens rum: Hvem ejer Aarhus Ø?',
 		category: 'talk',
-		date: '2026-11-23',
+		date: '2026-11-26',
 		time: '19:00',
 		venue: 'Godsbanen',
 		city: 'Aarhus',
