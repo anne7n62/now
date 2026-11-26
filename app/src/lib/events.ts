@@ -38,7 +38,7 @@ export const events: CalendarEvent[] = [
 		id: 4,
 		title: 'Klubnat med Lydbølge',
 		category: 'party',
-		date: '2026-11-22',
+		date: '2026-11-23',
 		time: '23:00',
 		venue: 'Train',
 		city: 'Aarhus',

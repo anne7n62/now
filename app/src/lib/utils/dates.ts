@@ -39,17 +39,22 @@ export function groupByWeek(events: CalendarEvent[]): WeekGroup[] {
 	return [...groups.values()];
 }
 
+/** Returnerer de næste `count` uger fra i dag. Events før i dag sorteres fra. */
 export function getUpcomingWeeks(
 	events: CalendarEvent[],
 	count = 4,
 	today = new Date()
 ): WeekGroup[] {
-	const groups = groupByWeek(events);
+	// Fjern events, der allerede har fundet sted ('YYYY-MM-DD' kan sammenlignes som tekst)
+	const todayStr = todayKey(today);
+	const upcoming = events.filter((event) => event.date >= todayStr);
+
+	const groups = groupByWeek(upcoming);
 	const weeks: WeekGroup[] = [];
 
 	for (let i = 0; i < count; i++) {
 		const day = new Date(today);
-		day.setDate(today.getDate() + i * 7); // the same weekday, i weeks later
+		day.setDate(today.getDate() + i * 7); // samme ugedag, i uger senere
 		const { week, year } = getIsoWeek(day);
 		const key = `${year}-${week}`;
 		weeks.push(groups.find((group) => group.key === key) ?? { key, week, year, events: [] });
@@ -58,9 +63,13 @@ export function getUpcomingWeeks(
 }
 
 /** true hvis '2026-11-24' er i dag (lokal tid) */
-export function isToday(date: string, today = new Date()): boolean {
+export function todayKey(today = new Date()): string {
 	const y = today.getFullYear();
 	const m = String(today.getMonth() + 1).padStart(2, '0');
 	const d = String(today.getDate()).padStart(2, '0');
-	return date === `${y}-${m}-${d}`;
+	return `${y}-${m}-${d}`;
+}
+
+export function isToday(date: string, today = new Date()): boolean {
+	return date === todayKey(today);
 }
